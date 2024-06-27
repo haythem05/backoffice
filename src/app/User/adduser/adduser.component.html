@@ -1,0 +1,51 @@
+<main>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <p class="title">Add User</p>
+   
+    <div class="flex">
+      <label>
+        <input type="text" name="firstName" placeholder=" First Name" [(ngModel)]="user.firstName" required class="input">
+      </label>
+      <label>
+        <input type="text" name="lastName"  placeholder=" Last Name" [(ngModel)]="user.lastName" required class="input">
+      </label>
+    </div>
+
+    <label>
+      Image
+      <input type="file" name="image" (change)="onFileSelected($event)" class="input">
+    </label>
+    
+    <label>
+      <input type="email" name="email" placeholder=" Email " [(ngModel)]="user.email"  required class="input">
+    </label>
+    <label>
+      <input type="password" name="password"  placeholder=" Password " [(ngModel)]="user.password" required class="input">
+    </label>
+    <label>
+      <input type="text" name="phone"  placeholder="+216" [(ngModel)]="user.phone" required class="input">
+    </label>
+    <label>
+      Gender 
+      <select name="gender" [(ngModel)]="user.gender" required class="input">
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </label>
+    <label>
+      Role
+      <select name="role" [(ngModel)]="user.role" required class="input">
+        <option value="" disabled selected>Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="ScrumMaster">Scrum Master</option>
+        <option value="ChefProjet">Chef Projet</option>
+        <option value="Developpeur">Developpeur</option>
+      </select>
+    </label>
+    <label>
+      <input type="number" name="skillRate"  placeholder="Skill Rate" [(ngModel)]="user.skillRate" min="0" max="100" required class="input">
+    </label>
+    <button type="submit" class="submit">Submit</button>
+  </form>
+</main>

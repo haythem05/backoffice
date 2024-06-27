@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.sidebar {
+  width: 25%; /* Adjust the width of the sidebar */
+  background-color: #f0f0f0; /* Optional: Add background color to the sidebar */
+  padding: 20px; /* Optional: Add padding to the sidebar */
+}
+
+.table-content {
+  flex-grow: 1; /* Allow the table content to grow and fill available space */
+  padding: 20px; /* Optional: Add padding to the table content */
+}
+
+.mat-elevation-z8 {
+  width: 100%; /* Make the table fill the available space */
+}
+
+/* Button Styles */
+.del, .Edit, .Unban {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100px; /* Reduced width */
+  height: 35px; /* Reduced height */
+  margin: 5px; /* Adjust margin for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.del div, .Edit div, .Unban div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5),
+              inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+              inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  letter-spacing: 1px;
+  z-index: 1;
+  transition: .6s;
+}
+
+.del div {
+  color: #a5260d;
+}
+
+.del:hover div {
+  letter-spacing: 4px;
+  color: #fff;
+  background: #922d08;
+}
+
+.Edit div {
+  color: #125bd1;
+}
+
+.Edit:hover div {
+  letter-spacing: 4px;
+  color: #fff;
+  background: #125bd1;
+}
+
+.Unban div {
+  color: #04d516;
+}
+
+.Unban:hover div {
+  letter-spacing: 4px;
+  color: #fff;
+  background: #04d516;
+}

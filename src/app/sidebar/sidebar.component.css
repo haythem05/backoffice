@@ -1,0 +1,16 @@
+/* sidebar.component.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust width as needed */
+    background-color: #fff; /* Set background color as needed */
+    z-index: 1000; /* Ensure sidebar is above other content */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  .sidebar.collapsed {
+    transform: translateX(-250px); /* Move sidebar off-screen when collapsed */
+  }
+  

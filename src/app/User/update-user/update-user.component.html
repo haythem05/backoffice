@@ -1,0 +1,65 @@
+<main>
+    <form class="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <p class="title">Edit User</p>
+     
+        <div class="flex">
+            <label>
+                <input type="text" name="firstName" placeholder=" First Name" [(ngModel)]="user.firstName" required class="input">
+                <div *ngIf="userForm.controls['firstName'].invalid && (userForm.controls['firstName'].dirty || userForm.controls['firstName'].touched)" class="error-message">
+                    <span *ngIf="userForm.controls['firstName'].errors?.['required']">First Name is required.</span>
+                </div>
+            </label>
+            <label>
+                <input type="text" name="lastName"  placeholder=" Last Name" [(ngModel)]="user.lastName" required class="input">
+                <div *ngIf="userForm.controls['lastName'].invalid && (userForm.controls['lastName'].dirty || userForm.controls['lastName'].touched)" class="error-message">
+                    <span *ngIf="userForm.controls['lastName'].errors?.['required']">Last Name is required.</span>
+                </div>
+            </label>
+        </div>
+        <label>
+            <input type="email" name="email" placeholder=" Email " [(ngModel)]="user.email"  required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="input">
+            <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="error-message">
+                <span *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</span>
+                <span *ngIf="userForm.controls['email'].errors?.['pattern']">Invalid email format.</span>
+            </div>
+        </label>
+        <label>
+            <input type="password" name="password" placeholder=" Password " [(ngModel)]="user.password" required minlength="8" class="input">
+            <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="error-message">
+                <span *ngIf="userForm.controls['password'].errors?.['required']">Password is required.</span>
+                <span *ngIf="userForm.controls['password'].errors?.['minlength']">Password must be at least 8 characters long.</span>
+            </div>
+        </label>
+
+        <label>
+            <input type="text" name="phone"  placeholder="+216" [(ngModel)]="user.phone" required class="input">
+          </label>
+        <label>
+     
+            <select name="role" [(ngModel)]="user.role" required class="input">
+                <option value="" disabled selected>Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="ScrumMaster">Scrum Master</option>
+                <option value="ChefProjet">Chef Projet</option>
+                <option value="Developpeur">Developpeur</option>
+            </select>
+            <div *ngIf="userForm.controls['role'].invalid && (userForm.controls['role'].dirty || userForm.controls['role'].touched)" class="error-message">
+                <span *ngIf="userForm.controls['role'].errors?.['required']">Role is required.</span>
+            </div>
+        </label>
+        <label>
+            <input type="number" name="skillRate" placeholder="Skill Rate" [(ngModel)]="user.skillRate" min="0" max="100" required class="input">
+            <div *ngIf="userForm.controls['skillRate'].invalid && (userForm.controls['skillRate'].dirty || userForm.controls['skillRate'].touched)" class="error-message">
+                <span *ngIf="userForm.controls['skillRate'].errors?.['required']">Skill Rate is required.</span>
+                <span *ngIf="userForm.controls['skillRate'].errors?.['min']">Skill Rate must be at least 0.</span>
+                <span *ngIf="userForm.controls['skillRate'].errors?.['max']">Skill Rate cannot be more than 100.</span>
+            </div>
+        </label>
+        <!-- Add input for image upload -->
+        <label>
+            <input type="file" name="file" (change)="onFileSelected($event)" accept="image/*" class="input">
+        </label>
+        <button type="submit" class="submit">Submit</button>
+   
+    </form>
+</main>

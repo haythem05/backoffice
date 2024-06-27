@@ -1,0 +1,33 @@
+<div class="background-image">
+    <div class="container">
+        <div class="card">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                <h1>Sign In</h1>
+                <input type="text"
+                    [(ngModel)]="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    class="form-control mb-3"
+                >
+                <input type="password"
+                    [(ngModel)]="password"
+                    name="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    class="form-control mb-3"
+                >
+                <input type="submit"
+                    value="Login"
+                    class="btn"
+                >
+            </form>
+            <div *ngIf="warningMessage" class="alert alert-danger">{{ warningMessage }}</div>
+        </div>
+        <div [hidden]="captcha" >
+            <re-captcha (resolved)="resolved($event)" siteKey="6LfJDrspAAAAAJWac4jjz2BwOg35dzqCQXRMJF_1"></re-captcha>
+        </div>
+        <div [hidden]="!captcha">
+        </div>
+    </div>
+</div>

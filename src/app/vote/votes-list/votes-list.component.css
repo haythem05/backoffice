@@ -1,0 +1,142 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set main container to 100% of viewport height */
+}
+
+/* .votes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.votes-table th, .votes-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.votes-table th {
+    background-color: #f2f2f2;
+}
+
+.votes-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.votes-table tr:hover {
+    background-color: #ddd;
+} */
+
+/* Add custom styles to the table */
+.mat-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f3f3f3; /* Set background color */
+  }
+  
+  /* Style table header cells */
+  .mat-header-cell {
+    border: 1px solid #ddd; /* Add border */
+    padding: 8px;
+    text-align: left;
+    background-color: #4CAF50; /* Header background color */
+    color: white; /* Header text color */
+  }
+  
+  /* Style table data cells */
+  .mat-cell {
+    border: 1px solid #ddd; /* Add border */
+    padding: 8px;
+  }
+  
+  /* Style table rows */
+  .mat-row {
+    border-bottom: 1px solid #ddd; /* Add bottom border to rows */
+  }
+  
+  /* Style table pagination */
+  .mat-paginator {
+    margin-top: 20px;
+  }
+  
+button.mat-icon-button {
+    border-radius: 50%; /* Make the button circular */
+    background-color: red; /* Set the background color */
+}
+
+.mat-header-cell {
+  border: 1px solid #ddd; /* Add border */
+  padding: 12px 8px; /* Adjust padding */
+  text-align: left;
+  background-color: #4CAF50; /* Header background color */
+  color: white; /* Header text color */
+}
+
+/* Style table data cells */
+.mat-cell {
+  border: 1px solid #ddd; /* Add border */
+  padding: 12px 8px; /* Adjust padding */
+}
+
+/* Style table rows */
+.mat-row {
+  border-bottom: 1px solid #ddd; /* Add bottom border to rows */
+  background-color: #fff; /* Set background color for rows */
+}
+
+/* Alternate row background color */
+.mat-row:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+/* Hover effect on rows */
+.mat-row:hover {
+  background-color: #f0f0f0; /* Lighter background color on hover */
+}
+
+/* Style table pagination */
+.mat-paginator {
+  margin-top: 20px;
+}
+
+/* Style delete button */
+button.mat-icon-button {
+  border-radius: 50%; /* Make the button circular */
+  background-color: red; /* Set the background color */
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.del-button {
+  display: inline-block;
+  padding: 5px 6px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff0000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.del-button:hover {
+  background-color: #9b0606; /* Darker shade of yellow on hover */
+}
+
