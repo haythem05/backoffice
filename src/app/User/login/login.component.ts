@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService , private userAuthService:AuthenticationService , private router : Router) {}
   captcha: string = '';
-  recaptchaResolved : boolean = false;
+  recaptchaResolved : boolean = true;
   email: string = '';
   password: string = '';
   warningMessage: string = '';
