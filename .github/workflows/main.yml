@@ -90,5 +90,17 @@ jobs:
           echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
           sudo apt-get update
           sudo apt-get install -y trivy
-      - name: Scan Docker image
-        run: trivy image ${{ secrets.DOCKER_HUB_USERNAME }}/backoffice:1.0.0  
+      - name: Scan Docker image and save report
+        run: |
+          trivy image \
+            --format table \
+            --severity CRITICAL \
+            --exit-code 1 \
+            --output trivy-report.txt \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/backoffice:1.0.0
+
+      - name: Upload Trivy Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-backoffice-report
+          path: trivy-report.txt
